@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Board</title>
+  <meta name="description" content="A simple Kanban board to manage tasks across To Do, In Progress, Review and Done columns.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">KANBAN</div>
+    <div class="header-right">
+      <input type="text" class="search-input" id="searchInput" placeholder="Search tasks...">
+      <span class="task-count" id="taskCount">0 tasks</span>
+      <button class="btn-new-task" onclick="openModal()">+ New Task</button>
+    </div>
+  </header>
+
+  <main id="board">
+    <!-- Columns are built by JavaScript -->
+  </main>
+
+  <!-- Progress bar at the bottom of the screen -->
+  <div class="board-footer">
+    <div class="board-progress" id="boardProgress" style="width: 0%"></div>
+  </div>
+
+  <!-- Add / Edit task modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      <div class="modal-title" id="modalTitle">New Task</div>
+
+      <div class="form-group">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-input" id="taskTitle" placeholder="What needs to be done?">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea class="form-textarea" id="taskDesc" placeholder="Optional details..."></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Column</label>
+          <select class="form-select" id="taskCol">
+            <option value="todo">To Do</option>
+            <option value="inprogress">In Progress</option>
+            <option value="review">Review</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Priority</label>
+          <select class="form-select" id="taskPriority">
+            <option value="high">High</option>
+            <option value="med">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Tag</label>
+        <select class="form-select" id="taskTag">
+          <option value="blue:Feature">Feature</option>
+          <option value="amber:Bug">Bug</option>
+          <option value="red:Hotfix">Hotfix</option>
+          <option value="purple:Design">Design</option>
+          <option value="green:Perf">Performance</option>
+          <option value="gray:Docs">Docs</option>
+          <option value="blue:API">API</option>
+          <option value="amber:Research">Research</option>
+        </select>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-save" onclick="saveTask()">Save Task</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right-click context menu for cards -->
+  <div class="context-menu" id="contextMenu">
+    <div class="ctx-item" id="ctxEdit">Edit Task</div>
+    <div class="ctx-item" id="ctxMoveNext">Move Forward</div>
+    <div class="ctx-item" id="ctxMovePrev">Move Back</div>
+    <div class="ctx-divider"></div>
+    <div class="ctx-item danger" id="ctxDelete">Delete Task</div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
