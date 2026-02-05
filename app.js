@@ -21,10 +21,10 @@ let tasks = [
 ];
 
 // State variables
-let dragId = null;      // id of card being dragged
-let editId = null;      // id of task being edited in modal
-let ctxId = null;       // id of task the context menu is open for
-let searchQuery = '';   // current search text
+let dragId = null;       // id of card being dragged
+let editId = null;       // id of task being edited in modal
+let ctxId = null;        // id of task the context menu is open for
+let searchQuery = '';    // current search text
 
 // Generate a simple unique id for each task
 function uid() {
