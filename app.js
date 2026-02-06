@@ -177,8 +177,8 @@ function onDrop(e) {
 
   if (task && task.col !== targetCol) {
     task.col = targetCol;
-    const colName = COLS.find(c => c.id === targetCol).label;
-    showToast('Moved to ' + colName);
+    const col = COLS.find(c => c.id === targetCol);
+    showToast('Moved to ' + col.label);
     render();
   }
 
