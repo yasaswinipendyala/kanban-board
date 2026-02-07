@@ -345,7 +345,7 @@ document.getElementById('modalOverlay').addEventListener('click', function(e) {
   }
 });
 
-// Filter cards when typing in the search box
+// Live filter cards as user types in the search box
 document.getElementById('searchInput').addEventListener('input', function(e) {
   searchQuery = e.target.value;
   render();
