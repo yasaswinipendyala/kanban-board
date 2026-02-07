@@ -325,7 +325,7 @@ main {
 .modal {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 32px;
   width: 440px;
   max-width: calc(100vw - 32px);
