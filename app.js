@@ -362,7 +362,7 @@ function showToast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(function() {
     toast.classList.remove('show');
-  }, 2500);
+  }, 2800);
 }
 
 // Start the app
