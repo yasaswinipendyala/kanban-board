@@ -526,6 +526,6 @@ main {
 @media (max-width: 640px) {
   header { padding: 0 16px; }
   .search-input { display: none; }
-  main { padding: 16px; gap: 10px; padding-bottom: 40px; }
+  main { padding: 16px; gap: 10px; padding-bottom: 48px; }
   .column { flex: 0 0 250px; }
 }
